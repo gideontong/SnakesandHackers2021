@@ -54,3 +54,14 @@
     </div>
 </div>
 {% endmacro %}
+
+{% macro alert_card(heading, text, background = 'primary', color = 'white') %}
+<div class="col-lg-6 mb-4">
+    <div class="card bg-{{ background }} text-{{ color }} shadow">
+        <div class="card-body">
+            {{ heading }}
+            <div class="text-{{ color }}-50 small">{{ text }}</div>
+        </div>
+    </div>
+</div>
+{% endmacro %}
