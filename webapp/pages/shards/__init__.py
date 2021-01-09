@@ -3,7 +3,7 @@ from __main__ import *
 
 shards_blueprint = Blueprint('shards', __name__)
 
-@app.route('/shards')
+@shards_blueprint.route('/shards')
 def shards():
     context = {
         'is_shards': True,

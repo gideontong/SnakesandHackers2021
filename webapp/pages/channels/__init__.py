@@ -3,7 +3,7 @@ from __main__ import *
 
 channels_blueprint = Blueprint('channels', __name__)
 
-@app.route('/channels')
+@channels_blueprint.route('/channels')
 def channels():
     context = {
         'is_channels': True,

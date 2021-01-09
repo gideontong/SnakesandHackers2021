@@ -3,7 +3,7 @@ from __main__ import *
 
 users_blueprint = Blueprint('users', __name__)
 
-@app.route('/users')
+@users_blueprint.route('/users')
 def users():
     context = {
         'is_users': True,

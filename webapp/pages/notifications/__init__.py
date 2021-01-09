@@ -3,7 +3,7 @@ from __main__ import *
 
 notifications_blueprint = Blueprint('notifications', __name__)
 
-@app.route('/notifications')
+@notifications_blueprint.route('/notifications')
 def alerts():
     context = {
         'premium': premium

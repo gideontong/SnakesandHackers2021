@@ -3,7 +3,7 @@ from __main__ import *
 
 profile_blueprint = Blueprint('profile', __name__)
 
-@app.route('/me')
+@profile_blueprint.route('/me')
 def profile():
     context = {
         'premium': premium

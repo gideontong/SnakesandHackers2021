@@ -3,7 +3,7 @@ from __main__ import *
 
 statistics_blueprint = Blueprint('statistics', __name__)
 
-@app.route('/statistics')
+@statistics_blueprint.route('/statistics')
 def statistics():
     context = {
         'is_stats': True,

@@ -3,7 +3,7 @@ from __main__ import *
 
 guilds_blueprint = Blueprint('guilds', __name__)
 
-@app.route('/guilds')
+@guilds_blueprint.route('/guilds')
 def guilds():
     context = {
         'is_guilds': True,
