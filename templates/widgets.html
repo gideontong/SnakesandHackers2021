@@ -1,4 +1,4 @@
-{% macro mini(name, statistic = 0, icon = 'fa-calendar', color_class = 'text-primary', border_class = 'border-left-primary') %}
+{% macro mini_card(name, statistic = 0, icon = 'fa-calendar', color_class = 'text-primary', border_class = 'border-left-primary') %}
 <div class="col-xl-3 col-md-6 mb-4">
     <div class="card {{ border_class }} shadow h-100 py-2">
         <div class="card-body">
@@ -20,7 +20,7 @@
 </div>
 {% endmacro %}
 
-{% macro card(name, width = 5, options = False) %}
+{% macro default_card(name, width = 5, options = False) %}
 <!-- Area Chart -->
 <div class="col-xl-{{ width }} col-lg-{{ width - 1 }}">
     <div class="card shadow mb-4">
