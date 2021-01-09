@@ -1,11 +1,4 @@
-from flask import Blueprint, render_template
-
-index_blueprint = Blueprint('index', __name__)
-
-@index_blueprint.route('/')
-def index():
-    context = {
-        'is_index': True,
-        'premium': True
-    }
-    return render_template('index.html', **context)
+from .index import index_blueprint
+from .statistics import statistics_blueprint
+from .settings import settings_blueprint
+from .shards import shards_blueprint

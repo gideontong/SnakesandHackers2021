@@ -3,33 +3,10 @@ from flask import Flask, render_template
 app = Flask(__name__)
 premium = True
 
-from webapp.pages import index_blueprint
+from webapp import blueprints
 
-app.register_blueprint(index_blueprint)
-
-@app.route('/statistics')
-def statistics():
-    context = {
-        'is_stats': True,
-        'premium': premium
-    }
-    return render_template('statistics.html', **context)
-
-@app.route('/settings')
-def settings():
-    context = {
-        'is_settings': True,
-        'premium': premium
-    }
-    return render_template('settings.html', **context)
-
-@app.route('/shards')
-def shards():
-    context = {
-        'is_shards': True,
-        'premium': premium
-    }
-    return render_template('shards.html', **context)
+for blueprint in blueprints:
+    app.register_blueprint(blueprint)
 
 @app.route('/guilds')
 def guilds():
