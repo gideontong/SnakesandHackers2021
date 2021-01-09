@@ -14,8 +14,8 @@
 {% endfor %}
 {% endmacro %}
 
-{% macro dropdown(name, icon, menu) %}
-<li class="nav-item">
+{% macro dropdown(name, icon, menu, active = False) %}
+<li class="nav-item {% if active %}active{% endif %}">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse{{ name|replace(' ', '') }}" aria-expanded="true"
         aria-controls="collapse{{ name|replace(' ', '') }}">
         <i class="fas fa-fw {{ icon }}"></i>
@@ -58,19 +58,21 @@
 
     {{ heading('Servers') }}
 
+    {{ button('Statistics', '/statistics', 'fa-chart-bar', False) }}
+
     <!-- Nav Item - Pages Collapse Menu -->
     {{ dropdown('Global Settings', 'fa-cog', [{
-        'name': 'Custom Components',
+        'name': 'Main',
         'links': [
-            ('Buttons', '#'),
-            ('Cards', '#')
+            ('General', '/settings#general'),
+            ('Advertising', '/settings#ads')
         ]
-    }]) }}
+    }], False) }}
 
     <!-- Nav Item - Shards -->
     {{ button('Shards', '/shards', 'fa-wrench') }}
 
-    {{ heading('Addons') }}
+    {{ heading('Users') }}
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
