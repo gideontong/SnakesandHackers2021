@@ -6,4 +6,4 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     # commands, earnings, tickets
-    return render_template('index.html', tickets={'open': 3, 'closed': 10})
+    return render_template('index.html', is_index=True)

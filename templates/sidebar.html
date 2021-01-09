@@ -54,11 +54,11 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    {{ button('Dashboard', '/', 'fa-tachometer-alt', True) }}
+    {{ button('Dashboard', '/', 'fa-tachometer-alt', is_index) }}
 
     {{ heading('Servers') }}
 
-    {{ button('Statistics', '/statistics', 'fa-chart-bar', False) }}
+    {{ button('Statistics', '/statistics', 'fa-chart-bar', is_stats) }}
 
     <!-- Nav Item - Pages Collapse Menu -->
     {{ dropdown('Global Settings', 'fa-cog', [{
@@ -67,10 +67,10 @@
             ('General', '/settings#general'),
             ('Advertising', '/settings#ads')
         ]
-    }], False) }}
+    }], is_settings) }}
 
     <!-- Nav Item - Shards -->
-    {{ button('Shards', '/shards', 'fa-wrench') }}
+    {{ button('Shards', '/shards', 'fa-wrench', is_shards) }}
 
     {{ heading('Users') }}
 
