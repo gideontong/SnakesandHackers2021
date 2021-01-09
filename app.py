@@ -83,7 +83,4 @@ def log():
 
 @app.route('/logout')
 def logout():
-    context = {
-        'premium': premium
-    }
-    return 'You have been logged out.'
+    return render_template('logout.html')
