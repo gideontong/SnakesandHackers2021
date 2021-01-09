@@ -21,13 +21,13 @@
 <!-- Content Row -->
 <div class="row">
 
-    {{ mini_card('Weekly Commands', '32,567,844', 'fa-calendar', 'text-light', 'border-left-light') }}
+    {{ mini_card('Weekly Commands', commands, 'fa-calendar', 'text-light', 'border-left-light') }}
 
-    {{ mini_card('Premium Subscription Sales', '$15,355', 'fa-dollar-sign', 'text-success', 'border-left-success') }}
+    {{ mini_card('Premium Subscription Sales', sales, 'fa-dollar-sign', 'text-success', 'border-left-success') }}
 
-    {{ mini_card('Open Tickets', '41', 'fa-clipboard-list', 'text-info', 'border-left-info') }}
+    {{ mini_card('Open Tickets', tickets, 'fa-clipboard-list', 'text-info', 'border-left-info') }}
 
-    {{ mini_card('Online Servers', '4,311', 'fa-server', 'text-warning', 'border-left-warning') }}
+    {{ mini_card('Online Servers', online, 'fa-server', 'text-warning', 'border-left-warning') }}
 
 </div>
 <!-- Content Row -->
@@ -46,13 +46,13 @@
     </div>
     <div class="mt-4 text-center small">
         <span class="mr-2">
-            <i class="fas fa-circle text-primary"></i> Direct
+            <i class="fas fa-circle text-primary"></i> Male
         </span>
         <span class="mr-2">
-            <i class="fas fa-circle text-success"></i> Social
+            <i class="fas fa-circle text-success"></i> Female
         </span>
         <span class="mr-2">
-            <i class="fas fa-circle text-info"></i> Referral
+            <i class="fas fa-circle text-info"></i> Unknown
         </span>
     </div>
     {% endcall %}
@@ -146,5 +146,5 @@
 {% block scripts %}
 <!-- Page level custom scripts -->
 <script src="/static/users-chart.js"></script>
-<script src="/static/chart-pie-demo.js"></script>
+<script src="/static/users-pie.js"></script>
 {% endblock %}
