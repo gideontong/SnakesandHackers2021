@@ -34,7 +34,7 @@ def shards():
         'is_shards': True,
         'premium': premium
     }
-    pass
+    return render_template('shards.html', **context)
 
 @app.route('/guilds')
 def guilds():
@@ -42,7 +42,7 @@ def guilds():
         'is_guilds': True,
         'premium': premium
     }
-    pass
+    return render_template('guilds.html', **context)
 
 @app.route('/channels')
 def channels():
@@ -50,8 +50,12 @@ def channels():
         'is_channels': True,
         'premium': premium
     }
-    pass
+    return render_template('channels.html', **context)
 
 @app.route('/users')
 def users():
-    pass
+    context = {
+        'is_users': True,
+        'premium': premium
+    }
+    return render_template('users.html', **context)
