@@ -26,7 +26,7 @@ def settings():
         'is_settings': True,
         'premium': premium
     }
-    pass
+    return render_template('settings.html', **context)
 
 @app.route('/shards')
 def shards():
