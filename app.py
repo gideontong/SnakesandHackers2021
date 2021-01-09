@@ -66,3 +66,24 @@ def alerts():
         'premium': premium
     }
     return render_template('notifications.html', **context)
+
+@app.route('/me')
+def profile():
+    context = {
+        'premium': premium
+    }
+    return render_template('profile.html', **context)
+
+@app.route('/log')
+def log():
+    context = {
+        'premium': premium
+    }
+    return render_template('log.html', **context)
+
+@app.route('/logout')
+def logout():
+    context = {
+        'premium': premium
+    }
+    return 'You have been logged out.'
