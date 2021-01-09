@@ -2,3 +2,10 @@ from .index import index_blueprint
 from .statistics import statistics_blueprint
 from .settings import settings_blueprint
 from .shards import shards_blueprint
+from .guilds import guilds_blueprint
+from .channels import channels_blueprint
+from .users import users_blueprint
+from .notifications import notifications_blueprint
+from .profile import profile_blueprint
+from .log import log_blueprint
+from .logout import logout_blueprint
