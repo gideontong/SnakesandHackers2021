@@ -1,6 +1,9 @@
-{% macro card(name, options = False) %}
+{% macro mini() %}
+{% endmacro %}
+
+{% macro card(name, width = 5, options = False) %}
 <!-- Area Chart -->
-<div class="col-xl-8 col-lg-7">
+<div class="col-xl-{{ width }} col-lg-{{ width - 1 }}">
     <div class="card shadow mb-4">
         <!-- Card Header - Dropdown -->
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
