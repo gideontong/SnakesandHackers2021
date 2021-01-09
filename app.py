@@ -3,14 +3,9 @@ from flask import Flask, render_template
 app = Flask(__name__)
 premium = True
 
-@app.route('/')
-def index():
-    # commands, earnings, tickets
-    context = {
-        'is_index': True,
-        'premium': premium
-    }
-    return render_template('index.html', **context)
+from .pages import index
+
+app.register_blueprint(index)
 
 @app.route('/statistics')
 def statistics():
@@ -84,3 +79,5 @@ def log():
 @app.route('/logout')
 def logout():
     return render_template('logout.html')
+
+app.run()
