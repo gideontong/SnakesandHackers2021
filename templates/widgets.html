@@ -1,18 +1,18 @@
 {% macro mini_card(name, statistic = 0, icon = 'fa-calendar', color_class = 'text-primary', border_class = 'border-left-primary') %}
 <div class="col-xl-3 col-md-6 mb-4">
-    <div class="card {{ border_class }} shadow h-100 py-2">
+    <div class="card {{ border_class }} shadow h-100 py-2 bg-dark">
         <div class="card-body">
             <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                     <div class="text-xs font-weight-bold {{ color_class }} text-uppercase mb-1">
                         {{ name }}
                     </div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    <div class="h5 mb-0 font-weight-bold text-light">
                         {{ statistic }}
                     </div>
                 </div>
                 <div class="col-auto">
-                    <i class="fas {{ icon }} fa-2x text-gray-300"></i>
+                    <i class="fas {{ icon }} fa-2x text-light"></i>
                 </div>
             </div>
         </div>
