@@ -59,3 +59,10 @@ def users():
         'premium': premium
     }
     return render_template('users.html', **context)
+
+@app.route('/notifications')
+def alerts():
+    context = {
+        'premium': premium
+    }
+    return render_template('notifications.html', **context)
