@@ -45,7 +45,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+            <i class="fas fa-heartbeat"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Admin <sup><i class="fab fa-discord"></i></sup></div>
     </a>
@@ -75,6 +75,8 @@
     {{ heading('Data') }}
 
     {{ button('Servers', '/guilds', 'fa-building', is_guilds) }}
+
+    {{ button('Channels', '/channels', 'fa-comments', is_channels) }}
 
     {{ button('Users', '/users', 'fa-user-friends', is_users) }}
 
