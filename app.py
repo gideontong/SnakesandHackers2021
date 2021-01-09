@@ -3,9 +3,9 @@ from flask import Flask, render_template
 app = Flask(__name__)
 premium = True
 
-from .pages import index
+from webapp.pages import index_blueprint
 
-app.register_blueprint(index)
+app.register_blueprint(index_blueprint)
 
 @app.route('/statistics')
 def statistics():
