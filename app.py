@@ -18,7 +18,7 @@ def statistics():
         'is_stats': True,
         'premium': premium
     }
-    pass
+    return render_template('statistics.html', **context)
 
 @app.route('/settings')
 def settings():
