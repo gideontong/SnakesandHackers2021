@@ -12,11 +12,9 @@
             class="fab fa-github-alt fa-sm text-white-50"></i> View Code</a>
 </div>
 
-<!--
 <div class="row justify-content-center">
-    {{ alert_card('test', 'test') }}
+    {{ alert_card('Welcome to Discord Admin!', 'This project by Gideon Tong is currently under development.', 'info') }}
 </div>
--->
 
 <!-- Content Row -->
 <div class="row">
@@ -34,7 +32,10 @@
 
 <div class="row">
 
-    {% call default_card('Users', 7, { 'name': 'Options', 'options': ['Action', 'Action', False, 'Action'] }) %}
+    {% call default_card('Users', 7, {
+        'name': 'Options',
+        'options': ['Action', 'Action', False, 'Action']
+    }) %}
     <div class="chart-area">
         <canvas id="myAreaChart"></canvas>
     </div>

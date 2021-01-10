@@ -1,8 +1,74 @@
+{% macro buttonset(text, icon, link = '#', has_delete = False, delete_link = '#', color = 'info') %}
+<div class="my-2">
+    <a href="#" class="btn btn-{{ color }} btn-icon-split">
+        <span class="icon text-white-50">
+            <i class="fas fa-{{ icon }}"></i>
+        </span>
+        <span class="text">{{ text }}</span>
+    </a>
+    {% if has_delete %}
+    <a href="{{ delete_link }}" class="btn btn-danger btn-circle">
+        <i class="fas fa-trash"></i>
+    </a>
+    {% endif %}
+</div>
+{% endmacro %}
+
 {% extends 'base.html' %}
+
+{% from 'widgets.html' import default_card %}
 
 {% block title %} Settings {% endblock %}
 
 {% block body %}
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-white">Settings</h1>
+</div>
+
+<div class="row">
+    {% call default_card('General', 6, {
+        'name': 'Quick Switch',
+        'options': [
+            'Reset All'
+        ]
+    }) %}
+    <div class="mb-2">
+        <h4>Keys</h4>
+    </div>
+    <p>
+        This controls how your bot logs into Discord. Use this button to switch which
+        user account it is logged into. To use a test second account, click on the
+        configure button.
+    </p>
+    {{ buttonset('Change Discord Key', 'info-circle', '#', True, '#') }}
+    {{ buttonset('Configure Test Bot', 'wrench', '#') }}
+    <p>
+        Change which backend database the bot is using dynamically. User data is not carried
+        over and needs to be migrated manually. Supported: file-based, MongoDB, PostgreSQL,
+        MySQL and Firebase.
+    </p>
+    {{ buttonset('Change MongoDB Key', 'info-circle', '#', True, '#') }}
+    {{ buttonset('Switch Database', 'wrench', '#') }}
+    <p>
+        If your bot uses additional APIs, like weather, search, or other online services, you
+        can manually define them here.
+    </p>
+    {{ buttonset('More APIs', 'info-circle', '#') }}
+    {% endcall %}
+
+    {% call default_card('Advertising', 5, {
+        'name': 'Quick Switch',
+        'options': [
+            'Reset All'
+        ]
+    }) %}
+    <div class="mb-2">
+        <h4>Toggles</h4>
+    </div>
+    {{ buttonset('Enable', color='danger') }}
+    {% endcall %}
+</div>
 {% endblock %}
 
 {% block scripts %}
