@@ -1,3 +1,9 @@
+{% macro header(text) %}
+<div class="mb-2">
+    <h4>{{ text }}</h4>
+</div>
+{% endmacro %}
+
 {% macro buttonset(text, icon, link = '#', has_delete = False, delete_link = '#', color = 'info') %}
 <div class="my-2">
     <a href="#" class="btn btn-{{ color }} btn-icon-split">
@@ -16,15 +22,12 @@
 
 {% extends 'base.html' %}
 
-{% from 'widgets.html' import default_card %}
+{% from 'widgets.html' import default_card, title %}
 
 {% block title %} Settings {% endblock %}
 
 {% block body %}
-<!-- Page Heading -->
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-white">Settings</h1>
-</div>
+{{ title('Settings') }}
 
 <div class="row">
     {% call default_card('General', 6, {
@@ -33,9 +36,7 @@
             'Reset All'
         ]
     }) %}
-    <div class="mb-2">
-        <h4>Keys</h4>
-    </div>
+    {{ header('Keys') }}
     <p>
         This controls how your bot logs into Discord. Use this button to switch which
         user account it is logged into. To use a test second account, click on the
@@ -57,16 +58,26 @@
     {{ buttonset('More APIs', 'info-circle', '#') }}
     {% endcall %}
 
-    {% call default_card('Advertising', 5, {
+    {% call default_card('Advertising', 6, {
         'name': 'Quick Switch',
         'options': [
             'Reset All'
         ]
     }) %}
-    <div class="mb-2">
-        <h4>Toggles</h4>
-    </div>
-    {{ buttonset('Enable', color='danger') }}
+    {{ header('Master Toggle') }}
+    <p>
+        This enables global advertising. It periodically attaches advertisments to user's
+        commands and displays ads in certain channels with high activity where possible.
+        Can be disabled with this toggle.
+    </p>
+    {{ buttonset('Enable Advertising', 'ad', color='success') }}
+    {{ buttonset('Configure Ad Networks', 'cogs') }}
+    {{ header('Premium User') }}
+    <p>
+        This disables premium users. Warning: premium users may be angry!
+    </p>
+    {{ buttonset('Disable Premium', 'coins', color='danger') }}
+    {{ buttonset('Revoke All Premium', 'exclamation-circle', color='danger') }}
     {% endcall %}
 </div>
 {% endblock %}
